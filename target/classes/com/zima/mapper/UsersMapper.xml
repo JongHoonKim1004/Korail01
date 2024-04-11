@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zima.mapper.UsersMapper">
+	<resultMap type="com.zima.domain.UsersVO" id="usersMap">
+		<id property="uno" column="uno"/>
+		<result property="uno" column="uno"/>
+		<result property="id" column="id"/>
+		<result property="password" column="password"/>
+		<result property="name" column="name"/>
+		<result property="email" column="email"/>
+		<result property="phone" column="phone"/>
+		<result property="regDate" column="regDate"/>
+		<collection property="authList" resultMap="authMap"></collection>
+	</resultMap>
+
+	<resultMap type="com.zima.domain.UsersAuthVO" id="authMap">
+		<result property="id" column="id"/>
+		<result property="auth" column="auth"/>
+	</resultMap>
+
+	<select id="getList" resultType="com.zima.domain.UsersVO">
+		select * from users where uno > 0 order by uno desc
+	</select>
+	
+	<insert id="insert">
+		insert into users(uno, id, name, password, phone, email)
+		values(seq_users.nextval, #{id}, #{name}, #{password}, #{phone}, #{email})
+	</insert>
+	
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="uno" order="BEFORE" resultType="long">
+			select seq_users.nextval from dual
+		</selectKey>
+		insert into users(uno, id, name, password, phone, email)
+		values(#{uno}, #{id}, #{name}, #{password}, #{phone}, #{email})
+	</insert>
+	
+	<select id="getOne">
+		select * from users where uno=#{uno}
+	</select>
+	
+	<select id="read" resultMap="usersMap">
+		select
+			users.id, password, name, email, phone, regDate, auth
+		from
+			users left outer join users_auth auth on users.id = auth.id
+		where users.id = #{id}
+	</select>
+	
+	<update id="update">
+		update users set password=#{password}, name=#{name}, phone=#{phone}, email=#{email} where uno = #{uno}
+	</update>
+	
+	<delete id="delete">
+		delete from users where uno=#{uno}
+	</delete>
+	
+	<select id="countById" resultType="int">
+		select COUNT(*) from users where id = #{id}
+	</select>
+	
+	<select id="getListWithPaging" resultType="com.zima.domain.UsersVO">
+		<![CDATA[
+			select uno, id, name, phone, email, regDate from (
+			select /*+ INDEX_DESC(users pk_users) */ rownum rn, uno, id, name, phone, email, regDate
+			from users where rownum <= #{pageNum} * #{amount}	
+			) where rn > (#{pageNum} - 1) * #{amount}
+		]]>
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from users where uno > 0
+	</select>
+	
+	<select id="confirmUsersByEmail" resultType="int">
+		select count(*) from users where email = #{email}
+	</select>
+	
+	<select id="searchUsersByEmail" resultMap="usersMap">
+		select
+			users.id, password, name, email, phone, regDate, auth
+		from
+			users left outer join users_auth auth on users.id = auth.id
+		where users.email = #{email}
+	</select>
+	
+	<insert id="insertAuthUser">
+		insert into users_auth(id, auth) values(#{id}, 'ROLE_USER')
+	</insert>
+	
+	<select id="getOneById" resultType="com.zima.domain.UsersVO">
+		select * from users where id = #{id}
+	</select>
+</mapper>

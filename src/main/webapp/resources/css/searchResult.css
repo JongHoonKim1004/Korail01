@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+#wrap {
+  width: 1200px;
+  height: 1360px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.wrap_left {
+  float: left;
+  width: 650px;
+  height: 100%;
+  padding:0 30px;
+}
+
+.left-title {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.search-result {
+  width: 100%;
+  height: 108px;
+  border: 1px solid #333;
+}
+
+.result-info {
+  float: left;
+  width: 500px;
+  height: 100%;
+}
+
+
+
+.result-btn {
+  float: right;
+  width: 38px;
+  border-left: 1px solid #333;
+  height: 100%;
+}
+
+.result-btn button {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background-color: salmon;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.wrap_right {
+  float: right;
+  width: 540px;
+  height: 100%;
+  border-left: 1px solid #333;
+  padding:0 30px;
+}
+
+#seatTable {
+  width: 100%;
+  height: 100%;
+  
+}
+
+#seatTable h1 {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.seatTable {
+  width: 100%;
+  height: 1100px;
+  border: 1px solid #333;
+  margin-top: 30px;
+  padding: 10px 0;
+}
+
+.seatTable_front {
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  float: left;
+}
+
+.seatTable_back {
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  float: left;
+}
+
+.seat {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  margin: 15px;
+  background-image: url("../img/searchResult/seat.png");
+  background-size: 80px 80px;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.seat img {
+  width: 80px;
+  height: 80px;
+}
+
+.left_seat {
+  float: left;
+}
+
+.right_seat {
+  float: right;
+}
+
+.reserved {
+	opacity: 0.5 !important;
+	cursor: default !important;
+}
+
+.selected {
+	background-color: yellow;
+}
+
+.submit {
+  float: right;
+  width: 200px;
+  height: 50px;
+  background-color: #0066b3;
+  margin-top: 30px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 550;
+  color: white;
+  cursor: pointer;
+}

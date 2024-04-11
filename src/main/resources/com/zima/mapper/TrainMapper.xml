@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zima.mapper.TrainMapper">
+	<select id="getList" resultType="com.zima.domain.TrainVO">
+		select * from train where tno > 0 order by tno desc
+	</select>
+	
+	<select id="getOneByTno" resultType="com.zima.domain.TrainVO">
+		select * from train where tno = #{tno}
+	</select>
+
+	<select id="search" resultType="com.zima.domain.TrainVO">
+		<![CDATA[
+			select * from train where dep_place=#{dep_place} and arr_place=#{arr_place} and dep_time > #{dep_time} and arr_time < #{arr_time} order by dep_time asc
+		]]>
+	</select>
+	
+	<insert id="insert">
+		insert into train(tno, dep_place, dep_time, arr_place, arr_time, grade)
+		values(seq_train.nextval, #{dep_place}, #{dep_time}, #{arr_place}, #{arr_time}, #{grade})		
+	</insert>
+	
+	<update id="update">
+		update train set dep_place=#{dep_place}, dep_time=#{dep_time}, arr_place=#{arr_place}, arr_time=#{arr_time} where tno=#{tno}
+	</update>
+	
+	<delete id="delete">
+		delete from train where tno=#{tno}
+	</delete>
+	
+	<select id="getTotalCount">
+		select count(*) from train
+	</select>
+</mapper>

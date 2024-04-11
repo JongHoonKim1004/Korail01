@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zima.mapper.ReservationMapper">
+	<select id="getList" resultType="com.zima.domain.ReservationVO">
+		select * from reservation where rno > 0 order by rno desc
+	</select>
+	
+	<insert id="insert">
+		insert into reservation(rno, tno, seat_id, user_id)
+		values(seq_reservation.nextval, #{tno}, #{seat_id}, #{user_id})
+	</insert>
+	
+	<select id="getOneByRno" resultType="com.zima.domain.ReservationVO">
+		select * from reservation where rno = #{rno}
+	</select>
+	
+	<update id="update">
+		update reservation set tno = #{tno}, seat_id = #{seat_id} where rno = #{rno}
+	</update>
+	
+	<delete id="delete">
+		delete from reservation where rno = #{rno}
+	</delete>
+	
+	<select id="reservationSearch" resultType="String">
+		select reservation.seat_id from reservation
+		inner join seat on reservation.seat_id = seat.seat_number
+		where reservation.tno = #{tno}
+	</select>
+	
+	<select id="getListByUserId" resultType="com.zima.domain.ReservationVO">
+		select * from reservation where user_id = #{user_id} order by rno desc
+	</select>
+	
+	<select id="getListPaging" resultType="com.zima.domain.ReservationVO">
+		<![CDATA[
+			select rno, tno, seat_id, user_id, resDate from (
+			select /*+ INDEX(reservation idx_reservation) */ rownum rn, rno, tno, seat_id, user_id, resDate
+			from reservation where rno > 0 and rownum < #{pageNum} * #{amount}
+			) where rn > (#{pageNum} - 1) * #{amount}
+		]]>
+	</select>
+	
+	<select id="getListMinByUserId" resultType="com.zima.domain.ReservationVO">
+		<![CDATA[
+			select rno, tno, seat_id, user_id, resDate from (
+				select rownum rn, rno, tno, seat_id, user_id, resDate
+				from reservation where user_id = #{user_id} order by rno desc
+			) where rn <= 3
+		]]>
+	</select>
+	
+	<select id="getTnoByUserId" resultType="long">
+		select tno from reservation where user_id = #{user_id} 
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from reservation
+	</select>
+	
+	<select id="getListMin" resultType="com.zima.domain.ReservationVO">
+		<![CDATA[
+			select rno, tno, seat_id, user_id, resDate from (
+				select rownum rn, rno, tno, seat_id, user_id, resDate
+				from reservation where rno > 0 order by rno desc
+			) where rn <= 5
+		]]>
+		
+	</select>
+</mapper>  

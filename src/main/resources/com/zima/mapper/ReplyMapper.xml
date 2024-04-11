@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zima.mapper.ReplyMapper">
+	<select id="getList" resultType="com.zima.domain.ReplyVO">
+		select * from qna_reply where rno > 0 order by rno desc
+	</select>
+
+	<insert id="insert">
+		insert into qna_reply(rno, qno, reply, replyer)
+		values(seq_qnareply.nextval, #{qno}, #{reply}, #{replyer})
+	</insert>
+	
+	<select id="getOneByRno" resultType="com.zima.domain.ReplyVO">
+		select * from qna_reply where rno=#{rno}
+	</select>
+	
+	<select id="read" resultType="com.zima.domain.ReplyVO">
+		select * from qna_reply where replyer=#{replyer}
+	</select>
+	
+	<update id="update">
+		update qna_reply set reply=#{reply} where rno=#{rno}
+	</update>
+	
+	<delete id="delete">
+		delete from qna_reply where rno=#{rno}
+	</delete>
+	
+	<select id="getListByQno" resultType="com.zima.domain.ReplyVO">
+		<![CDATA[
+			select rno, qno, reply, replyer, regDate from (
+				select /*+ INDEX(qna_reply idx_reply) */ rownum rn, rno, qno, reply, replyer, regDate
+				from qna_reply where qno = #{qno} and rno > 0 and rownum <= #{cri.pageNum} * #{cri.amount}
+			) where rn > (#{cri.pageNum} - 1) * #{cri.amount}
+		]]>
+	</select>
+	
+	<select id="getCountByQno" resultType="int">
+		<![CDATA[
+			select count(rno) from qna_reply where qno = #{qno}
+		]]>
+		
+	</select>
+	
+	<select id="getListQno" resultType="com.zima.domain.QnaVO">
+		select * from qna_reply where qno = #{qno} order by rno desc
+	</select>
+</mapper>  

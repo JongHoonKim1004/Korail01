@@ -1,0 +1,259 @@
+@charset "UTF-8";
+
+#wrap {
+  width: 1200px;
+  height: 1000px;
+  margin: 30px auto;
+}
+
+
+/* stationSearch */
+
+.station_search {
+  width: 600px;
+  height: auto;
+  margin: 100px auto;
+  border: 2px solid #333;
+  background-color: white;
+}
+
+.station_title {
+  width: 100%;
+  height: 50px;
+  margin-top: 30px;
+  line-height: 50px;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.station_form {
+  width: 400px;
+  height: 400px;
+  margin: 20px auto;
+}
+
+.main-search-input {
+    background: #fff;
+    padding: 0 120px 0 0;
+    border-radius: 1px;
+    border: 1px solid #333;
+    margin: 15px 0;
+    box-shadow: 0px 0px 0px 6px rgba(255,255,255,0.3);
+}
+
+.fl-wrap {
+    float: left;
+    width: 300px;
+    position: relative;
+}
+
+.main-search-input-item {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    border-right: 1px solid #eee;
+    height: 50px;
+    position: relative;
+}
+
+.main-search-input-item input:first-child {
+    border-radius: 100%;
+}
+
+.main-search-input-item input {
+    float: left;
+    border: none;
+    width: 100%;
+    height: 45px;
+    padding-left: 20px;
+}
+
+.main-search-button{
+
+      background: #4DB7FE;
+}
+
+.main-search-button {
+    position: absolute;
+    right: 0px;
+    height: 50px;
+    width: 120px;
+    color: #fff;
+    top: 0;
+    border: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    cursor: pointer;
+}
+
+.main-search-input-wrap {
+    max-width: 500px;
+    margin: 20px auto;
+    position: relative;
+}
+
+:focus {
+    outline: 0;
+}
+
+
+@media only screen and (max-width: 768px){
+.main-search-input {
+    background: rgba(255,255,255,0.2);
+    padding: 14px 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px 10px rgba(255,255,255,0.0);
+}
+
+.main-search-input-item {
+    width: 100%;
+    border: 1px solid #eee;
+    height: 50px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.main-search-input-item input {
+    border-radius: 6px !important;
+    background: #fff;
+}
+
+.main-search-button {
+    position: relative;
+    float: left;
+    width: 100%;
+    border-radius: 6px;
+}
+}
+
+.stationList{
+	width: 400px;
+	height: 50px;
+	margin: 0 auto;
+	font-size: 25px;
+	line-height: 50px;
+	color: white;
+	font-weight: 600;
+	background-color: skyblue;
+	text-align: center;
+	cursor: pointer;
+}
+
+/* stationSearchResult */
+.station_search_result {
+  width: 800px;
+  height: 800px;
+  margin: 0 auto;
+  border: 1px solid #333;
+  background-color: white;
+}
+
+.station_search_result_title {
+  width: 100%;
+  height: 50px;
+  margin-top: 30px;
+  line-height: 50px;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+
+}
+
+.staion_result {
+  width: 600px;
+  height: 600px;
+  margin: 100px auto 0;
+
+}
+
+.stationButton {
+	float: right;
+	
+}
+
+/* stationInfo */
+.station_info {
+  width: 800px;
+  height: auto;
+  margin: 0 auto;
+  padding: 30px; 
+  border: 1px solid #333;
+  background-color: white;
+}
+
+.station_TitImg {
+  width: 100%;
+  height: 200px;
+  background-color: #f8f8f8;
+}
+
+.station_info_image {
+  width: 200px;
+  height: 200px;
+  float: left;
+}
+
+.station_info_title {
+  width: 579px;
+  height: 200px;
+  float: right;
+  padding-left: 20px;
+  line-height: 200px;
+  font-size: 40px;
+  font-weight: 650px;
+  
+}
+
+.station_content {
+  width: 600px;
+  height:auto;
+  padding: 0 100px;
+  min-height: 500px;
+}
+
+.statioin_textarea {
+	resize: none;
+}
+
+.station_mainBtn {
+  width: 100%;
+  height: 100px;
+}
+
+.station_btn {
+  float: right;
+  width: auto;
+  height: 40px;
+  margin: 30px 20px 0 20px;
+  border: 0;
+  border-radius: 3px;
+  background-color: red;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* stationList */
+#wrap_list {
+	width: 1200px;
+	height: 8000px;
+	margin: 0 auto;
+}
+
+.station_list_result {
+	width: 800px;
+	height: auto;
+	margin: 0 auto;
+  	border: 1px solid #333;
+  	background-color: white;
+}
+
+.station_list {
+	width: 600px;
+	height: auto;
+	margin: 100px auto 0;
+}

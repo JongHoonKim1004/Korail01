@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.zima.mapper.NoticeMapper">
+  	<select id="getList" resultType="com.zima.domain.NoticeVO">
+  		select * from notice where nno > 0 order by nno desc
+  	</select>
+  	
+  	<insert id="insert">
+  		insert into notice(nno, title, content, writer)
+  		values(seq_notice.nextval, #{title}, #{content}, #{writer})
+  	</insert>
+  	
+  	<insert id="insertSelectKey">
+  		<selectKey keyProperty="nno" order="BEFORE" resultType="long">
+  			select seq_notice.nextval from dual
+  		</selectKey>
+  		
+  		insert into notice(nno, title, content, writer, readcount)
+  		values(#{nno}, #{title}, #{content}, #{writer}, 0)
+  	</insert>
+  	
+  	<select id="read" resultType="com.zima.domain.NoticeVO">
+  		select * from notice where nno = #{nno}
+  	</select>
+  	
+  	<update id="update">
+  		update notice set title=#{title}, content=#{content}, writer=#{writer} where nno=#{nno}
+  	</update>
+  	
+  	<delete id="delete">
+  		delete from notice where nno=#{nno}
+  	</delete>
+  	
+  	<update id="updateReadCount">
+  		update notice set readCount = readCount + 1 where nno = #{nno}
+  	</update>
+  	
+  	<select id="getListWithPaging" resultType="com.zima.domain.NoticeVO">
+		<![CDATA[
+			select nno, title, content, writer, regDate, readCount from (
+			select /*+ INDEX_DESC(notice pk_notice) */ rownum rn, nno, title, content, writer, regDate, readCount 
+			from notice where rownum <= #{pageNum} * #{amount}	
+			) where rn > (#{pageNum} - 1) * #{amount}
+		]]>
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from notice where nno > 0
+	</select>
+  </mapper>

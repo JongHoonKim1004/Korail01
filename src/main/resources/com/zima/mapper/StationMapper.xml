@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zima.mapper.StationMapper">
+	<select id="getList" resultType="com.zima.domain.StationVO">
+		select * from station where sno > 0 order by sno asc
+	</select>
+	
+	<insert id="insert">
+		insert into station(sno, name, addr, latitude, longitude, url, info)
+		values(seq_station.nextval, #{name}, #{addr}, #{latitude}, #{longitude}, #{url}, #{info})
+	</insert>
+	
+	<select id="getOne" parameterType="long" resultType="com.zima.domain.StationVO">
+		select * from station where sno=#{sno}
+	</select>
+	
+	<update id="update" parameterType="com.zima.domain.StationVO">
+		update station set name=#{name}, addr=#{addr}, latitude=#{latitude}, longitude=#{longitude}, url=#{url}, info=#{info} where sno=#{sno}
+	</update>
+	
+	<delete id="delete" parameterType="long">
+		delete from station where sno=#{sno}
+	</delete>
+	
+	<select id="searchName" parameterType="String" resultType="com.zima.domain.StationVO">
+		select * from station where name like '%'|| #{name} ||'%' order by sno asc
+	</select>
+	
+	<select id="searchLocation" parameterType="String" resultType="com.zima.domain.StationVO">
+		select * from station where addr like '%'|| #{addr} ||'%' order by sno asc
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from station
+	</select>
+	
+	<select id="getListWithPaging" resultType="com.zima.domain.StationVO">
+		<![CDATA[
+			select sno, name, addr, latitude, longitude, url, info from (
+			select /*+ INDEX_ASC(station pk_station) */ rownum rn, sno, name, addr, latitude, longitude, url, info
+			from station where rownum <= #{pageNum} * #{amount} 
+			) where rn > (#{pageNum} - 1) * #{amount}
+		]]>
+	</select>
+</mapper>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<property name="username" value="korail"/>
+		<property name="password" value="1234"/>
+	</bean>
+
+
+<bean id="customAccessDenied" class="com.zima.security.CustomAccessDeniedHandler"></bean>
+<bean id="customLoginSuccessHandler" class="com.zima.security.CustomLoginSuccessHandler"></bean>
+<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+<bean id="customUserDetailsService" class="com.zima.security.CustomUserDetailsService"></bean>
+
+<sec:http>
+	<!-- 접근 가능한 페이지 범위 설정 -->
+		<!-- 관리자 페이지는 로그인 페이지 제외 접근 제한 -->
+		<sec:intercept-url pattern="/admin/login" access="permitAll"/>
+		<sec:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+		
+		<!-- 일반 페이지 설정 -->
+			<!-- Q&A 작성, 수정, 삭제는 일반 회원만 가능하도록 -->
+			<sec:intercept-url pattern="/qna/qnaWrite" access="hasRole('ROLE_USER')"/>
+			<sec:intercept-url pattern="/qna/qnaModify" access="hasRole('ROLE_USER')"/>
+			<sec:intercept-url pattern="/qna/qnaDelete" access="hasRole('ROLE_USER')"/>
+			
+			<!-- 예약관련 모든 페이지는 로그인 후에 가능하도록 -->
+			<sec:intercept-url pattern="/train/**" access="hasRole('ROLE_USER')"/>
+			
+			<!-- 마이페이즈는 일반회원만 접근 가능하도록 -->
+			<sec:intercept-url pattern="/mypage/**" access="hasRole('ROLE_USER')"/>
+	<!-- /접근 가능한 페이지 범위 설정 -->
+	
+	<sec:form-login login-page="/login" authentication-success-handler-ref="customLoginSuccessHandler"/>
+	<sec:access-denied-handler ref="customAccessDenied" />
+	<sec:logout invalidate-session="true" logout-url="/logout" delete-cookies="JSESSIONID" logout-success-url="/"/>
+
+	
+</sec:http>
+
+<sec:authentication-manager>
+	<sec:authentication-provider user-service-ref="customUserDetailsService">
+		
+		<sec:password-encoder ref="bcryptPasswordEncoder"/>
+	</sec:authentication-provider>
+</sec:authentication-manager>
+
+</beans>

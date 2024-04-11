@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zima.mapper.QnaMapper">
+	<select id="getList" resultType="com.zima.domain.QnaVO">
+		select * from qna where qno > 0 order by qno desc
+	</select>
+	
+	<insert id="insert" parameterType="com.zima.domain.QnaVO">
+		insert into qna(qno, title, content, writer)
+		values(seq_qna.nextval, #{title}, #{content}, #{writer})
+	</insert>
+	
+	<select id="getOne" parameterType="long" resultType="com.zima.domain.QnaVO">
+		select * from qna where qno = #{qno}
+	</select>
+	
+	<update id="update" parameterType="com.zima.domain.QnaVO">
+		update qna set title=#{title}, content=#{content} where qno = #{qno}
+	</update>
+	
+	<delete id="delete" parameterType="long">
+		delete from qna where qno = #{qno}
+	</delete>
+	
+	<update id="updateReadCount" parameterType="long">
+		update qna set readCount = readCount + 1 where qno = #{qno}
+	</update>
+	
+	<select id="getListWithPaging" resultType="com.zima.domain.QnaVO">
+		<![CDATA[
+			select qno, title, content, writer, regDate, readCount from (
+			select /*+ INDEX_DESC(qna pk_qna) */ rownum rn, qno, title, content, writer, regDate, readCount 
+			from qna where rownum <= #{pageNum} * #{amount}	
+			) where rn > (#{pageNum} - 1) * #{amount}
+		]]>
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from qna where qno > 0
+	</select>
+	
+	<select id="getListMinByWriter" resultType="com.zima.domain.QnaVO">
+		<![CDATA[
+			select qno, title, content, writer, regDate, readCount from (
+				select rownum rn, qno, title, content, writer, regDate, readCount
+				from qna where writer = #{writer} order by qno desc
+			) where rn <= 3
+		]]>
+	</select>
+	
+	<select id="getListByWriter" resultType="com.zima.domain.QnaVO">
+		select * from qna where writer = #{writer} order by qno desc
+	</select>
+</mapper>
+

@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+#wrap {
+  width: 1000px;
+  height: 1000px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.notice_qna {
+  width: 198px;
+  height: 1000px;
+  float: left;
+  border-right: 1px solid #333;
+}
+
+.noticeqna_menubox {
+  width: 100%;
+  height: 200px;
+}
+
+.menubox_title {
+  width: 100%;
+  height: 100px;
+  background-color: #337ab7;
+  border-radius: 3px 0 0 3px;
+  text-align: center;
+  line-height: 100px;
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+}
+
+.menubox_notice {
+  width: 100%;
+  height: 50px;
+  background-color: #0066b3;
+  border-bottom: 1px solid black;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.menubox_qna {
+  width: 100%;
+  height: 50px;
+  background-color: #0066b3;
+  border-bottom: 1px solid black;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.noticeqna_main {
+  width: 740px;
+  height: 1000px;
+  padding: 0 30px;
+  float: right;
+  background-color: white;
+}
+
+/* noticeList */
+.noticeList_table {
+  width: 100%;
+  height: auto;
+
+}
+
+.noticeList {
+  width: 100%;
+  
+}
+
+.noticeList thead tr {
+  height: 50px;
+  line-height: 50px;
+}
+
+.noticeList tbody tr {
+  height: 25px;
+  line-height: 25px;
+}
+
+.noticeList tr {
+  border-bottom: 1px solid #333;
+  border-top: 1px solid #333;
+}
+
+.noticeList_btnDiv {
+  width: 100%;
+  height: 100px;
+}
+
+.noticeList_btnDiv > button {
+	float: right;
+}
+
+.notice_write {
+  float: right;
+  width: 100px;
+  height: 50px;
+  margin-right: 50px;
+  border: 0;
+  border-radius: 5px;
+  background-color: red;
+  line-height: 50px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.noticeList_message {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+}
+
+
+
+/* noticeWrite */
+.noticeWrite_title {
+  width: 100%;
+  height: 80px;
+  line-height: 50px;
+  font-size: 35px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding-top: 30px;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.noticeWrite_main {
+  width: 100%;
+  height: 690px;
+}
+
+
+
+.titleInput {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  resize: none;
+}
+
+.writerInput {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+}

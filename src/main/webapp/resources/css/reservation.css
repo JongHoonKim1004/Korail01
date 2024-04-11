@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+#wrap {
+  width: 1200px;
+  height: 1000px;
+  margin: 30px auto;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+
+}
+
+.wrap_left {
+  width: 540px;
+  height: 100%;
+  float: left;
+  padding: 0 30px;
+}
+
+.reservation_info {
+  width: 100%;
+  height: 100%;
+  
+}
+
+.wrap_right {
+  width: 538px;
+  height: 100%;
+  float: right;
+  border-left: 1px solid #333;
+  padding: 0 30px;
+}
+
+.payment {
+  width: 100%;
+  height: 800px;
+  border: 1px solid #333;
+}
+
+.submit {
+  width: 200px;
+  height: 50px;
+  border: 0;
+  border-radius: 3px;
+  background-color: #0066b3;
+  margin-top: 30px;
+  float: right;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 30px;
+  color: white;
+  cursor: pointer;
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zima.mapper.AdminMapper">
+	<resultMap type="com.zima.domain.AdminVO" id="adminMap">
+		<id property="ano" column="ano"/>
+		<result property="ano" column="ano"/>
+		<result property="id" column="id"/>
+		<result property="password" column="password"/>
+		<result property="phone" column="phone"/>
+		<result property="email" column="email"/>
+		<collection property="authList" resultMap="authMap"></collection>
+	</resultMap>
+	<resultMap type="com.zima.domain.AdminAuthVO" id="authMap">
+		<result property="id" column="id"/>
+		<result property="auth" column="auth"/>
+	</resultMap>
+
+	<select id="getList" resultType="com.zima.domain.AdminVO">
+		select * from admin where ano > 0 order by ano desc
+	</select>
+	
+	<insert id="insert">
+		insert into admin(ano, id,  password, phone, email)
+		values(seq_admin.nextval, #{id}, #{password}, #{phone}, #{email})
+	</insert>
+	
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="ano" order="BEFORE" resultType="long">
+			select seq_admin.nextval from dual
+		</selectKey>
+		insert into admin(ano, id, password, phone, email)
+		values(#{ano}, #{id}, #{password}, #{phone}, #{email})
+	</insert>
+	
+	<select id="getOne" resultType="com.zima.domain.AdminVO">
+		select * from admin where ano=#{ano}
+	</select>
+	
+	<select id="read" resultMap="adminMap">
+		select
+			admin.id, password, email, phone, auth
+		from
+			admin left outer join admin_auth auth on admin.id = auth.id
+		where admin.id = #{id}
+	</select>
+	
+	<update id="update">
+		update admin set password=#{password}, phone=#{phone}, email=#{email} where ano = #{ano}
+	</update>
+	
+	<delete id="delete">
+		delete from admin where ano=#{ano}
+	</delete>
+	
+	<select id="getOneById" resultType="com.zima.domain.AdminVO">
+		select * from admin where id = #{id}
+	</select>
+	
+	<insert id="insertAdminAuth">
+		insert into admin_auth(id, auth) values(#{id}, 'ROLE_ADMIN')
+	</insert>
+</mapper>
