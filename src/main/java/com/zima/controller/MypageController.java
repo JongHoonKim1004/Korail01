@@ -108,14 +108,29 @@ public class MypageController {
 		model.addAttribute("dtoList", dtoList);
 				
 		// 메인페이지에 표시할 Q&A와 댓글 개수 불러오기
+		// DTO 분러오기
 		List<QnaVO> qnaList = qnaService.getListMinByWriter(id);
-		List<Integer> replyCountList = new ArrayList<Integer>();
-		for(QnaVO vo : qnaList) {
-			int replyCount = replyService.getCountByQno(vo.getQno());
-			replyCountList.add(replyCount);
+		List<List<ReplyVO>> replyList = new ArrayList<List<ReplyVO>>();
+		List<QnaReplyDTO> dtoList1 = new ArrayList<QnaReplyDTO>();
+		
+		for(QnaVO qna : qnaList) {
+			long qno = qna.getQno();
+			List<ReplyVO> reply = replyService.getListQno(qno);
+			replyList.add(reply);
 		}
-		model.addAttribute("replyCountList", replyCountList);
-		model.addAttribute("qnaList", qnaList);
+		
+		for(int i = 0 ; i < qnaList.size(); i++) {
+			QnaVO qna = qnaList.get(i);
+			List<ReplyVO> reply = replyList.get(i);
+			
+			QnaReplyDTO dto = new QnaReplyDTO();
+			dto.setQna(qna);
+			dto.setReply(reply);
+			
+			dtoList1.add(dto);
+		}
+		
+		model.addAttribute("dtoList1", dtoList1);
 	}
 	
 	// 회원정보 수정 페이지
