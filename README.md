@@ -136,9 +136,10 @@
 
  * **아아디, 비밀번호 찾기**
    * 로그인 페이지에서 `아이디 찾기`를 통해 아아디 찾기 페이지로 이동할 수 있고 이메일 주소를 입력한 후 `아이디 찾기`를 클릭하면 아아디를 확인할 수 있다.
-   * 
+     ![korail03_idFind](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail03_idFind.gif?raw=true)
    * 비밀번호 찾기 페이지에서는 아이디와 계정 등록에서 등록한 이메일 주소를 입력하면 인증번호를 포함한 메일을 전송하고 인증번호를 입력하면 비밀번호를 재설정 할 수 있다.
-   * 
+     ![korail04_passwordFind](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail04_passwordFind.gif?raw=true)
+
  
  * **게시판**
    * 상단 네비게이션 바의 `공지사항`을 통해서 공지사항 목록으로 이동할 수 있고 제목을 클릭하면 해당 공지사항을 확인할 수 있다.
