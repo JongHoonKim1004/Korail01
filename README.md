@@ -180,45 +180,57 @@
    
       ![korail09_qna_reservation](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail09_qna_reservation.gif?raw=true) 
 
-     
+  * **관리자 로그인, 로그아웃**
+    * 관리자 로그인은 메인 페이지 하단의 `관리자 로그인`을 통해 이동한 관리자 로그인 페이지를 통해서 할 수 있다.
+    * 관리자 로그아웃은 상단 우측의 인물 아이콘 클릭 후 `Logout` 을 통해 이동한 페이지를 통해 할 수 있다.
+   
+      ![korail10_adminLogin](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail10_adminLogin.gif?raw=true)
+
+  * **관리자 페이지 - 공지사항**
+    * 관리자 페이지 좌측 사이드바에서 `공지사항` -> `공지사항 목록`을 통해 공지사항 목록 페이지로 접근할 수 있다.
+    * `공지사항 작성`을 통해 새로운 공지사항을 작성할 수 있다.
+
+      ![korail11_adminNotice](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail11_adminNotice.gif?raw=true)
+
+  * **관리자 페이지 - Q&A**
+    * 관리자 페이지 좌측 사이드바에서 `Q&A` -> `Q&A 목록`을 통해 질문 목록을 호출하고 제목을 클릭하면 질문을 자세히 볼 수 있다.
+    * 질문 내용 하단의 `Reply` 버튼을 통해 답글을 작성할 수 있으며, 작성된 답글은 질문을 보는 페이지 하단에서 확인할 수 있다.
+   
+      ![korail12_qnaReply](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail12_qnaReply.gif?raw=true) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </details>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
