@@ -218,31 +218,9 @@
       ![korail14_trainCreate](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail14_trainCreate.gif?raw=true)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </details>
+
+## 🌄 개선사항
+- 승차권 예약에 대한 결제 모듈 도입
+- 승차권 예약에 대한 조건 추가(할인 조건 추가, 포인트 도입 등)
+- 회원 정보 항목 추가
