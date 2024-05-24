@@ -132,7 +132,7 @@
     * `카카오 로그인`을 클릭하면 카카오계정을 이용한 소셜 로그인이 가능하다.
     * 카카오계정으로 등록된 이메일로 가입한 계정이 있다면 해당 계정으로 로그인 처리를 하고, 그렇지 않다면 간편 회원가입 페이지로 이동한다.
    
-    
+    ![korail02_login&kakaoLogin](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail02_login&KakaoLogin.gif?raw=true)
 
  * **아아디, 비밀번호 찾기**
    * 로그인 페이지에서 `아이디 찾기`를 통해 아아디 찾기 페이지로 이동할 수 있고 이메일 주소를 입력한 후 `아이디 찾기`를 클릭하면 아아디를 확인할 수 있다.
