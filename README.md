@@ -136,16 +136,26 @@
 
  * **아아디, 비밀번호 찾기**
    * 로그인 페이지에서 `아이디 찾기`를 통해 아아디 찾기 페이지로 이동할 수 있고 이메일 주소를 입력한 후 `아이디 찾기`를 클릭하면 아아디를 확인할 수 있다.
+
      ![korail03_idFind](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail03_idFind.gif?raw=true)
+     
    * 비밀번호 찾기 페이지에서는 아이디와 계정 등록에서 등록한 이메일 주소를 입력하면 인증번호를 포함한 메일을 전송하고 인증번호를 입력하면 비밀번호를 재설정 할 수 있다.
+
      ![korail04_passwordFind](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail04_passwordFind.gif?raw=true)
+     
 
  
  * **게시판**
    * 상단 네비게이션 바의 `공지사항`을 통해서 공지사항 목록으로 이동할 수 있고 제목을 클릭하면 해당 공지사항을 확인할 수 있다.
    * `Q&A`를 통해서 질문 목록으로 이동할 수 있고 `Q&A 작성`을 통해 새로운 질문을 작성할 수 있으며 본인이 올린 질문에 대해 수정 및 삭제가 가능하다
 
+     ![korail05_noticeqna](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail05_noticeqna.gif?raw=true)
+    
+ * **철도역 검색**
+   * 상단 네비게이션 바의 `철도역 검색`을 통해 철도역을 검색할 수 있다.
+   * 역 이름을 통한 검색과 주소를 통한 검색이 있으며,두 방법 모두 부분적으로 일치하는 모든 결과를 보여준다.
 
+      ![korail06_station](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail06_station.gif?raw=true)
  
 </details>
 
