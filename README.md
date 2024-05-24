@@ -156,7 +156,31 @@
    * 역 이름을 통한 검색과 주소를 통한 검색이 있으며,두 방법 모두 부분적으로 일치하는 모든 결과를 보여준다.
 
       ![korail06_station](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail06_station.gif?raw=true)
- 
+
+
+ * **승차권 예약**
+   * 상단 네비게이션 바의 `승차권 예매` 혹은 메인 페이지의 `빠른 표 검색`을 통해 노선 검색 결과 페이지로 이동한다.
+   * 각 예약의 `예약 검색`을 클릭하면 현재 예약 가능한 좌석이 표시 된다.
+   * 원하는 좌석을 선택하고 `다음으로`를 클릭하면 최종적으로 예약 정보를 확인할 수 있고 `예약하기`를 클릭하면 예약이 완료된다.
+
+     ![korail07_reservation](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail07_reservation.gif?raw=true)
+  
+ * **마이페이지 - 회원 정보 변경**
+   * 로그인 후 `마이페이지` -> `정보 수정하기`를 통해 회원정보를 수정할 수 있다. 기본적으로 아이디를 제외한 다른 정보를 수정할 수 있다
+     ![korail08_infoModify](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail08_infoModify.gif?raw=true)
+     
+   * 소셜 로그인으로 로그인 한 경우 아아디, 이름, 이메일은 변경할 수 없다.
+     ![korail08_KakaoInfoModify](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail08_KakaoInfoModify.gif?raw=true)
+
+
+  * **마이페이지 - 나의 예약, 나의 Q&A**
+    * `나의 예약`, `나의 Q&A` 모두 `자세히 보기`를 클릭하면 각 항목의 목록 페이지로 이동한다.
+    * `나의 Q&A`의 제목을 클릭하면 질문을 자세히 볼 수 있다.
+    * `나의 에약`의 예약 번호를 클릭하면 예약을 자세히 볼 수 있으며 `취소하기`를 통해 예약을 취소할 수 있다.
+   
+      ![korail09_qna_reservation](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail09_qna_reservation.gif?raw=true) 
+
+     
 </details>
 
 
