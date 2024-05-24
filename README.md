@@ -198,12 +198,24 @@
    
       ![korail12_qnaReply](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail12_qnaReply.gif?raw=true) 
 
+  * **관리자 페이지 - 예약 목록, 철도역 목록**
+    * 관리자 페이지 좌측 사이드바에서 `예약 관리` -> `예약 목록`을 통해 등록된 모든 예약을 확인할 수 있다.
+    * `철도역 관리` -> `철도역 목록`을 통해 등록된 모든 철도역을 확인할 수 있으며, 제목을 클릭하여 상세 정보 와 지도를 통한 위치를 확인할 수 있다.(DAUM MAP API 호출)
+   
+      ![korail13_res_train_stationList](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail13_res_train_stationList.gif?raw=true)
+
+  * **관리자 페이지 - 철도역 생성**
+    * 관리자 페이지 좌측 사이드바 에서 `철도역 관리` -> `철도역 생성`을 클릭하면 철도역 생성 페이지로 이동할 수 있다.
+    * 이름과 주소를 입력하고 DAUM MAP API를 통해 호출한 지도를 통해 위치를 확정할 수 있고 추가 정보를 등록하면 철도역 등록이 완료된다.
+   
+      ![korail15_stationCreate](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail15_stationCreate.gif?raw=true)
 
 
-
-
-
-
+  * **관리자 페이지 - 새 노선 생성**
+    * 관리자 페이지 좌측 사이드바에서 `노선 관리` -> `새 노선 생성`을 통해 노선 생성 페이지로 이동할 수 있다.
+    * 각종 정보를 작성한 뒤 `Submmit`을 클릭하면 정상적으로 노선 등록이 완료된다.
+   
+      ![korail14_trainCreate](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail14_trainCreate.gif?raw=true)
 
 
 
