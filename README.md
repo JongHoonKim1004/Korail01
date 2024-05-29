@@ -1,4 +1,9 @@
-<h1 align="center"><img src="https://cdn-icons-png.freepik.com/512/2855/2855692.png" style="width: 300; height: 150"></h1>
+<h1 align="center">
+
+![ppt_reservation04](https://github.com/JongHoonKim1004/Korail01/assets/155927559/9adbcb07-fd0c-4824-a005-d97f08ed024a)
+
+  
+</h1>
 <h1 align="center">스프링 레거시 철도 예약 프로젝트</h1>
 <br/><br/>
 
