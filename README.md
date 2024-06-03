@@ -37,7 +37,7 @@
 
 ## 👾 프로젝트 설계, 구현 📂 PPT 📂 (ERD, USECASE)
 
-<details><summary>프로젝트 설계, 구현, PPT</summary>
+프로젝트 설계, 구현, PPT
 
 <div align="center">
 
@@ -94,7 +94,7 @@
 
 </div>
   
-</details>
+
 
 ## 💻 핵심 기능
 
@@ -119,8 +119,7 @@
 
 ## 🎇 주요기능 실행화면
 
-<details>
-  <summary>주요기능 실행화면</summary>
+주요기능 실행화면
 
 
   
@@ -223,7 +222,7 @@
       ![korail14_trainCreate](https://github.com/JongHoonKim1004/JongHoonKimMedia/blob/main/readme/Korail14_trainCreate.gif?raw=true)
 
 
-</details>
+
 
 ## 🌄 개선사항
 - 승차권 예약에 대한 결제 모듈 도입
